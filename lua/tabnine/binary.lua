@@ -65,7 +65,7 @@ function TabnineBinary:start()
 	self.stdin = uv.new_pipe()
 	self.stdout = uv.new_pipe()
 	self.stderr = uv.new_pipe()
-	self.handle, self.pid = uv.spawn(binary_path(), {
+	self.handle, self.pid = uv.spawn("TabNine", {
 		args = vim.list_extend({
 			"--client",
 			"nvim",
